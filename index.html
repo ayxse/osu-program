@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osu! User Data Fetcher</title>
+    <title>Osu! User Stats</title>
 </head>
 <body>
-    <h1>Osu! User Data Fetcher 1</h1>
-    <form id="osu-form">
-        <input type="text" id="osu-username" name="osu-username" placeholder="Enter Osu! Username">
-        <button type="submit">Fetch User Data</button>
-    </form>
-    <div id="user-data">
-        <!-- User data will be displayed here -->
+    <h1>Osu! User Stats</h1>
+    <input type="text" id="usernameInput" placeholder="Enter Osu! username">
+    <button id="fetchUserDataButton">Fetch User Stats</button>
+    <div id="userDataContainer" style="display: none;">
+        <h2>User Stats:</h2>
+        <pre id="userData"></pre>
     </div>
 
+    <!-- Include the Axios library for making HTTP requests -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Include your main.js file -->
     <script src="main.js"></script>
-
-    <div id="user-data">
-        <!-- User data will be displayed here -->
-      </div>
-      
 </body>
 </html>
