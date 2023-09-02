@@ -1,24 +1,24 @@
-// Function to fetch Osu! user stats from the Osu! API
-function fetchUserStats(username) {
+// Function to fetch Osu! user data
+function fetchUserData(username) {
     const userDataContainer = document.getElementById('userDataContainer');
     const userDataElement = document.getElementById('userData');
   
-    // Make a GET request to the Osu! API to fetch the user's stats
+    // Make a GET request to the Osu! API to fetch the user's data
     axios
-      .get(`https://osu.ppy.sh/api/get_user?u=${username}&k=b784e0522318bab6e28fa03d4b1072874480e1eb`)
+      .get(`https://osu.ppy.sh/${username}`)
       .then((response) => {
-        // Display the user stats in the userDataContainer
+        // Display the user data in the userDataContainer
         userDataElement.textContent = JSON.stringify(response.data, null, 2);
         userDataContainer.style.display = 'block';
       })
       .catch((error) => {
-        console.error('Error fetching user stats:', error);
-        userDataElement.textContent = 'Error fetching user stats';
+        console.error('Error fetching user data:', error);
+        userDataElement.textContent = 'Error fetching user data';
         userDataContainer.style.display = 'block';
       });
   }
   
-  // Event listener for the "Fetch User Stats" button
+  // Event listener for the "Fetch User Data" button
   const fetchUserDataButton = document.getElementById('fetchUserDataButton');
   fetchUserDataButton.addEventListener('click', () => {
     const usernameInput = document.getElementById('usernameInput');
@@ -29,7 +29,7 @@ function fetchUserStats(username) {
       return;
     }
   
-    // Call the fetchUserStats function with the username
-    fetchUserStats(username);
+    // Call the fetchUserData function with the username
+    fetchUserData(username);
   });
   
