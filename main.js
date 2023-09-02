@@ -1,7 +1,7 @@
 import { Client } from 'osu-web.js';
 
 // Initialize the client with your Osu! API key
-const client = new Client('893d83f5b4af7428a167d5297ee8b009855db3e0'); // Replace with your API key
+const client = new Client('4de9a885c54d8daac6b9c7245f453ad317f644dc'); // Replace with your API key
 
 // Function to fetch and display user data
 async function getUserData(username) {
